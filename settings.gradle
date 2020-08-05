@@ -3,6 +3,7 @@ rootProject.name = 'adventure-parent'
 // Unfortunately, we cannot make this any nicer really
 
 include 'api'
+include 'api-kotlin'
 include 'nbt'
 include 'text-serializer-gson'
 include 'text-serializer-legacy'
@@ -10,6 +11,7 @@ include 'text-serializer-plain'
 
 [
   'api',
+  'api-kotlin',
   'nbt',
   'text-serializer-gson',
   'text-serializer-legacy',
