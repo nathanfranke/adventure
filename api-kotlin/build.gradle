@@ -2,7 +2,7 @@ import org.jetbrains.dokka.gradle.DokkaTask
 
 plugins {
   id 'org.jetbrains.kotlin.jvm' version '1.4.0'
-  id 'org.jetbrains.dokka' version '1.4.0-rc'
+  id 'org.jetbrains.dokka' version '1.4.0'
 }
 
 sourceSets {
@@ -29,8 +29,8 @@ javadocJar {
 tasks.withType(DokkaTask).configureEach {
   dokkaSourceSets {
     main {
-      includes = [ layout.projectDirectory.file("src/main/dokka/descriptions.md").toString()]
-      samples = sourceSets.examples.kotlin.sourceDirectories.files.collect { it.toString() }
+      includes.from(layout.projectDirectory.file("src/main/dokka/descriptions.md"))
+      samples.from(sourceSets.examples.kotlin.sourceDirectories)
       /*externalDocumentationLink { // TODO: javadoc publication
         url = new URL("https://jd.adventure.kyori.net")
       }*/
